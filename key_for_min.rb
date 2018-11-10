@@ -9,11 +9,13 @@ def key_for_min_value(name_hash)
     return nil
   else
     name_hash.each do |key, value|
-      if value < smallest
+      if value == ""
+        smallest = value
+        smallest_key = key
+      elsif value < smallest
         smallest = value
         smallest_key = key
       end
-      binding.pry
     end
   end
   smallest_key
